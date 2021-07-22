@@ -47,8 +47,14 @@ function main() {
   var tape = new Tape(runner);
 
   memory.tape_write_bit = tape.write_bit;
-  memory.update_ruslat = ui.update_ruslat;
+  memory.update_ruslat = ui.update_ruslat;  
 
   document.getElementById("loading").style.display = "none";
   document.getElementById("main_panel").style.display = "inline-block";
+}
+
+function on_load() {
+  ui.sound_toggle({checked: true});
+
+  ui.fullscreen();
 }

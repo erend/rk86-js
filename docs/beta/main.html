@@ -83,7 +83,6 @@
 
     #canvas_panel {
       background: black;
-      border: 1px solid white;
     }
 
     #disassembler_panel {
@@ -100,16 +99,15 @@
   <div class="content">
     <div id="loading">Loading...</div>
     <div id="main_panel" style="display: none">
-      <button onclick="location.href='index.html'; return true">Назад в каталог</button>
-      <button onclick="ui.fullscreen()">Полный экран</button>
-      <input type="checkbox" onclick="ui.sound_toggle(this)" /><span>Звук</span>
+      <button onclick="location.href='index.html'; return true" style="display: none">Назад в каталог</button>
+      <button onclick="ui.fullscreen()" style="display: none">Полный экран</button>
+      <input type="checkbox" onclick="ui.sound_toggle(this)" style="display: none"/><span style="display: none">Звук</span>
       <span id="ruslat" style="display: none"></span>
       <div id="emulator_panel">
-        <div style="float: left" style="display: block;">
-          <div id="canvas_panel">
-            <canvas id="canvas"></canvas>
-          </div>
-          
+        <div id="canvas_panel">
+          <canvas id="canvas"></canvas>
+        </div>
+        <div style="float: left" style="display: none">
           <span style="display: none">Built-in:</span><select style="display: none" id="file_selector"></select>
           <span id="preloaded"></span>
         </div>

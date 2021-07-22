@@ -257,6 +257,8 @@ function UI(tape_catalog, runner, memory, autoexec) {
       console.log("Started", file.name, "from", file.entry.toString(16));
       screen.init_cache();
       this.runner.cpu.jump(file.entry);
+
+      this.sound_toggle({checked: true}); // Set sound on
     }
   };
 
@@ -325,6 +327,7 @@ function UI(tape_catalog, runner, memory, autoexec) {
       this.computer_snapshot_count
     );
     const json = rk86_snapshot(ui, screen);
+ 
     const blob = new Blob([json], { type: "application/json" });
     saveAs(blob, filename);
     this.computer_snapshot_count += 1;
