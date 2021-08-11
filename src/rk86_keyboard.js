@@ -158,7 +158,7 @@ function Keyboard() {
         }
       }
       this.meta_keys_buffer = null;
-    } else if (code == 9) {
+    } else if (code == 27) {
       console.log('27!');
       history.back();
     } else {
