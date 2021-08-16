@@ -24,6 +24,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Радио-86РК</title>
+  <script src="index_navigation.js" type="application/javascript"></script>
 
   <style>
     [type="checkbox"] {
@@ -46,6 +47,10 @@
       text-decoration: none;      
       border: none;
     }
+
+    .item:focus {
+      background-color: gray;
+    }
     
     .list {
       position: fixed;
@@ -60,11 +65,11 @@
   </style>
 </head>
 
-<body onload="main()" bgcolor="#ffffff" text="#000000">
+<body onload="keyboard_navigation()" bgcolor="#ffffff" text="#000000">
   <div class="list">
-    <a href="../main.html?file=ZAGIB.GAM">Загиб</a>
-    <a href="../main.html?file=FOXHUNT.RK">Охота на лис</a>
-    <a href="../main.html?file=TETRIS1.RKR">Тетрис</a>
+    <a class="item" id="first" href="../main.html?file=ZAGIB.GAM">Загиб</a>
+    <a class="item" href="../main.html?file=FOXHUNT.RK">Охота на лис</a>
+    <a class="item" href="../main.html?file=TETRIS1.RKR">Тетрис</a>
   </div>
 </body>
 
