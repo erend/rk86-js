@@ -81,6 +81,12 @@
       font-size: 16px;
     }
 
+    #alert {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
     #canvas_panel {
       background: black;
     }
@@ -107,6 +113,7 @@
         <div id="canvas_panel">
           <canvas id="canvas"></canvas>
         </div>
+        <div id="alert" />
         <div style="float: left" style="display: none">
           <span style="display: none">Built-in:</span><select style="display: none" id="file_selector"></select>
           <span id="preloaded"></span>

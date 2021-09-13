@@ -24,6 +24,7 @@ function UI(tape_catalog, runner, memory, autoexec) {
 
   this.canvas = document.getElementById("canvas");
   this.canvas_panel = document.getElementById("canvas_panel");
+  this.alert = document.getElementById("alert");
 
   this.ruslat = document.getElementById("ruslat");
   this.ruslat_state = false;
@@ -257,8 +258,10 @@ function UI(tape_catalog, runner, memory, autoexec) {
       console.log("Started", file.name, "from", file.entry.toString(16));
       screen.init_cache();
       this.runner.cpu.jump(file.entry);
-
+      
       this.sound_toggle({checked: true}); // Set sound on
+
+      this.alert.innerHTML = file.name;
     }
   };
 
