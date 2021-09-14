@@ -261,7 +261,7 @@ function UI(tape_catalog, runner, memory, autoexec) {
       
       this.sound_toggle({checked: true}); // Set sound on
 
-      this.alert.innerHTML = `<span>${file.name}</span><br /><span>Про кнопки тут</span>`;
+      this.alert.innerHTML = `<span>${file.name}</span><br /><span class="alert">Про кнопки тут</span>`;
     }
   };
 
