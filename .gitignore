@@ -3,6 +3,7 @@
 /rk86_tape_catalog.js
 /catalog/index.html
 /build
+/docs
 .venv
 .vscode
 node_modules
