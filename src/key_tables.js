@@ -1,4 +1,4 @@
-export const key_tables = {
+const key_tables = {
   'FORMULA.RK': {
     36: [0, 0x01], //   \\  -> HOME
     35: [0, 0x02], //   CTP -> END
