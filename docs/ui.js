@@ -16,6 +16,8 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
+import { key_tables } from "./key_tables";
+
 function UI(tape_catalog, runner, memory, autoexec) {
   this.tape_catalog = tape_catalog;
   this.runner = runner;
@@ -231,6 +233,14 @@ function UI(tape_catalog, runner, memory, autoexec) {
     }
     this.memory.load_file(file);
 
+    if (file.name == 'FORMULA.RK') {
+      this.memory.keyboard.key_table = key_tables['FORMULA.RK'];
+    }
+
+    this.alert.innerHTML = `<span>${file.name}</span><br /><span class="alert">Про кнопки тут</span>`;
+
+    this.sound_toggle({checked: true}); // Set sound on  
+
     if (this.disassembler_available())
       window.frames.disassembler_frame.i8080disasm.refresh(this.memory);
 
@@ -257,11 +267,7 @@ function UI(tape_catalog, runner, memory, autoexec) {
     } else {
       console.log("Started", file.name, "from", file.entry.toString(16));
       screen.init_cache();
-      this.runner.cpu.jump(file.entry);
-      
-      this.sound_toggle({checked: true}); // Set sound on
-
-      this.alert.innerHTML = `<span>${file.name}</span><br /><span class="alert">Про кнопки тут</span>`;
+      this.runner.cpu.jump(file.entry);        
     }
   };
 

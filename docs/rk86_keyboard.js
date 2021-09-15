@@ -35,7 +35,7 @@ function Keyboard() {
     this.modifiers = fromHex(snapshot.modifiers);
   }
 
-  const key_table = {
+  this.key_table = {
     36: [0, 0x01], //   \\  -> HOME
     35: [0, 0x02], //   CTP -> END
     116: [0, 0x04], //  AP2 -> F5
@@ -120,7 +120,7 @@ function Keyboard() {
     if (code == 17) this.modifiers &= ~US;
     // F10
     if (code == 121) this.modifiers &= ~RL;
-    const key = key_table[code];
+    const key = this.key_table[code];
     if (key) this.state[key[0]] &= ~key[1];
   };
 
@@ -132,7 +132,7 @@ function Keyboard() {
     if (code == 17) this.modifiers |= US;
     // F10
     if (code == 121) this.modifiers |= RL;
-    const key = key_table[code];
+    const key = this.key_table[code];
     if (key) this.state[key[0]] |= key[1];
   };
 
