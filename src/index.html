@@ -27,17 +27,22 @@
   <script src="index_navigation.js" type="application/javascript"></script>
 
   <style>
+    @font-face {
+      font-family: "Graph";
+      src: url("../Graph-35-pix.ttf");
+    }
+
     body {
       background: #000;
       color: #aaa;
+      font-family: Graph;      
     }
 
     button,
     input,
     span {
       font-size: 12px;
-      padding-right: 4px;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      padding-right: 4px;      
     }
 
     a {
@@ -50,46 +55,61 @@
 
     .content {
       position: relative;
-      display: flex;
-      justify-content: flex-end;
-      margin: 96px 96px 192px;
+      padding: 574px 96px 192px;
+      font-size: 24px;
+      line-height: 32px;
+      text-transform: uppercase;
     }
 
     .logo {
       position: absolute;
-      top: 0;
-      left: 0; 
+      top: 96px;
+      left: 96px; 
+    }
+
+    .item {
+      position: relative;
+      outline: none;
     }
 
     .item:before {
       content: '*';
       display: none;
+      position: absolute;
+      top: 0;
+      left: -16px
     }
 
-    .item:before:focus {
+    .item:focus:before {
       display: block;
     }
     
     .list {
       display: flex;
-      flex-flow: column;
-      width: 130px;
+      flex-flow: row;
+      height: 130px;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      width: 424px;
     }
 
     .footer {
-
+      padding-left: 424px;
     }
 
     .logo_footer {
       position: absolute;
-      bottom: 0;
-      right: 0; 
+      bottom: 192px;
+      right: 96px; 
     }
   </style>
 </head>
 
-<body onload="keyboard_navigation()" bgcolor="#000" text="#fff">
-  <div class="content>
+<body onload="list_keyboard_navigation()">
+  <div class="content">
     <svg class="logo" width="944" height="184" viewBox="0 0 944 184" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M784 24V0H848V24H784Z" fill="white"/>
       <path d="M784 120V96H848V120H784Z" fill="white"/>
@@ -181,17 +201,23 @@
     </svg>
 
     <div class="list">
-      <a class="item" id="first" href="../main.html?file=BARMEN.RK">Бармен</a>
-      <a class="item" href="../main.html?file=FORMULA.RK">Формула</a>
-      <a class="item" href="../main.html?file=LABYRINT.GAM">Погоня в лабиринте</a>
-      <a class="item" href="../main.html?file=MAZE.GAM">Maze</a>
-      <a class="item" href="../main.html?file=STOPKR.RK">Стоп-кран</a>
-      <a class="item" href="../main.html?file=XONIX1.GAM">Xonix МИКРОН</a>
-      <a class="item" href="../main.html?file=DESCENT.RK">Descent</a>
+      <div class="column">
+        <a class="item" id="first" href="../main.html?file=BARMEN.RK">Бармен</a>
+        <a class="item" href="../main.html?file=FORMULA.RK">Формула</a>
+        <a class="item" href="../main.html?file=LABYRINT.GAM">Погоня в лабиринте</a>
+        <a class="item" href="../main.html?file=MAZE.GAM">Maze</a>
+        <a class="item" href="../main.html?file=STOPKR.RK">Стоп-кран</a>
+      </div>
+      <div class="column">
+        <a class="item" href="../main.html?file=XONIX1.GAM">Xonix МИКРОН</a>
+        <a class="item" href="../main.html?file=DESCENT.RK">Descent</a>
+      </div>
     </div>
     <div class="footer">
-      <a class="item" id="first" href="../about_project.html">О ПОЕКТЕ</a>
-      <a class="item" id="first" href="../about_comp.html">О КОМПЬЮТЕРЕ</a>
+      <div class="column">
+        <a class="item" href="../about_project.html">О проекте</a>
+        <a class="item" href="../about_comp.html">О компьютере</a>
+      </div>      
     </div>
     <svg class="logo_footer" width="240" height="98" viewBox="0 0 240 98" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 6V0H16V6H0Z" fill="white"/>

@@ -1,4 +1,4 @@
-function keyboard_navigation() {
+function list_keyboard_navigation() {
   const buttons = document.getElementsByClassName("item");
   let active = 0;
 
@@ -16,5 +16,15 @@ function keyboard_navigation() {
     }
 
     buttons.item(active).focus();
+  }
+}
+
+function main_keyboard_navigation() {
+  document.onkeydown = event => {
+    const keyCode = event.keyCode;
+
+    if (keyCode == 27) {
+      window.history.back();
+    }
   }
 }
