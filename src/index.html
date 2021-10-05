@@ -33,20 +33,13 @@
     }
 
     body {
+      margin: 0;
       background: #000;
       color: #aaa;
       font-family: Graph;      
     }
 
-    button,
-    input,
-    span {
-      font-size: 12px;
-      padding-right: 4px;      
-    }
-
     a {
-      margin-bottom: 8px;
       background-color: #000;
       color: #fff;
       text-decoration: none;      
@@ -54,8 +47,13 @@
     }
 
     .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       position: relative;
-      padding: 574px 96px 192px;
+      padding: 574px 96px 194px;
+      height: 100%;
+      box-sizing: border-box;
       font-size: 24px;
       line-height: 32px;
       text-transform: uppercase;
@@ -65,6 +63,19 @@
       position: absolute;
       top: 96px;
       left: 96px; 
+    }    
+    
+    .list {
+      display: flex;
+      flex-flow: row;
+      height: 160px;
+      padding-left: 24px;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      width: 424px;
     }
 
     .item {
@@ -77,27 +88,19 @@
       display: none;
       position: absolute;
       top: 0;
-      left: -16px
+      left: -24px
     }
 
     .item:focus:before {
       display: block;
     }
-    
-    .list {
-      display: flex;
-      flex-flow: row;
-      height: 130px;
-    }
 
-    .column {
+    .footer {     
       display: flex;
+      justify-content: flex-end;
       flex-direction: column;
-      width: 424px;
-    }
-
-    .footer {
       padding-left: 424px;
+      height: 96px;
     }
 
     .logo_footer {
