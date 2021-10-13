@@ -33,25 +33,373 @@
     }
 
     body {
+      margin: 0;
       background: #000;
-      color: #aaa;
+      color: #fff;
       font-family: Graph;      
     }
 
+    a {
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;      
+      border: none;
+    }
+
+    p {
+      margin-block-start: 0;
+    }
+
+    :root {
+      --opacity: 0;
+    }
+
+    .logo_header {
+      position: absolute;
+      top: 96px;
+      left: 96px; 
+    }  
+
     .content {
-      position: relative;
       display: flex;
-      justify-content: flex-end;
-      margin: 96px 96px 192px;
+      flex-direction: column;
+      position: relative;
+      padding: 266px 96px 194px;
+      height: 100%;
+      box-sizing: border-box;
+      font-size: 24px;
+      line-height: 32px;
+      text-transform: uppercase;
+    }
+
+    .row {
+      display: flex;
+    }
+
+    .text {
+      width: 744px;
+      height: 585px;
+      overflow: hidden;
+      margin-right: 34px;
+    }
+
+    .brackets {
+      width: 36px;
+      margin-right: 58px;
+    }
+
+    .right {
+
+    }
+
+    .item {
+      position: relative;
+      outline: none;
+    }
+
+    .item:before {
+      content: '*';
+      display: none;
+      position: absolute;
+      top: 0;
+      left: -24px
+    }
+
+    .item:focus:before {
+      display: block;
+    }
+
+    .logo_footer {
+      position: absolute;
+      bottom: 192px;
+      right: 96px; 
+    }
+
+    .bracket {
+      position: relative;
+    }
+
+    .bracket:before {
+      content: '*';
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 9px;
+      opacity: var(--opacity);
+      transition: opacity 300ms ease;
     }
 
   </style>
 </head>
 
-<body onload="main_keyboard_navigation()">
+<body onload="about_project()">
   <div class="content">
-    О КОМПЬЮТЕРЕ
+    <svg class="logo_header" width="544" height="92" viewBox="0 0 544 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M160 28V16H168V28H160Z" fill="white"/>
+      <path d="M168 28V16H176V28H168Z" fill="white"/>
+      <path d="M200 28V16H208V28H200Z" fill="white"/>
+      <path d="M160 44V32H168V44H160Z" fill="white"/>
+      <path d="M184 60V48H192V60H184Z" fill="white"/>
+      <path d="M176 44V32H184V44H176Z" fill="white"/>
+      <path d="M192 44V32H200V44H192Z" fill="white"/>
+      <path d="M160 60V48H168V60H160Z" fill="white"/>
+      <path d="M160 76V64H168V76H160Z" fill="white"/>
+      <path d="M160 92V80H168V92H160Z" fill="white"/>
+      <path d="M160 12V0H168V12H160Z" fill="white"/>
+      <path d="M208 28V16H216V28H208Z" fill="white"/>
+      <path d="M208 44V32H216V44H208Z" fill="white"/>
+      <path d="M208 60V48H216V60H208Z" fill="white"/>
+      <path d="M208 76V64H216V76H208Z" fill="white"/>
+      <path d="M208 92V80H216V92H208Z" fill="white"/>
+      <path d="M208 12V0H216V12H208Z" fill="white"/>
+      <path d="M8 12V0H32V12H8Z" fill="white"/>
+      <path d="M8 92V80H32V92H8Z" fill="white"/>
+      <path d="M0 28V16H8V28H0Z" fill="white"/>
+      <path d="M32 28V16H40V28H32Z" fill="white"/>
+      <path d="M32 44V32H40V44H32Z" fill="white"/>
+      <path d="M0 44V32H8V44H0Z" fill="white"/>
+      <path d="M32 60V48H40V60H32Z" fill="white"/>
+      <path d="M0 60V48H8V60H0Z" fill="white"/>
+      <path d="M32 76V64H40V76H32Z" fill="white"/>
+      <path d="M0 76V64H8V76H0Z" fill="white"/>
+      <path d="M120 12V0H144V12H120Z" fill="white"/>
+      <path d="M120 92V80H144V92H120Z" fill="white"/>
+      <path d="M112 28V16H120V28H112Z" fill="white"/>
+      <path d="M144 28V16H152V28H144Z" fill="white"/>
+      <path d="M144 44V32H152V44H144Z" fill="white"/>
+      <path d="M112 44V32H120V44H112Z" fill="white"/>
+      <path d="M144 60V48H152V60H144Z" fill="white"/>
+      <path d="M112 60V48H120V60H112Z" fill="white"/>
+      <path d="M144 76V64H152V76H144Z" fill="white"/>
+      <path d="M112 76V64H120V76H112Z" fill="white"/>
+      <path d="M72 28V16H80V28H72Z" fill="white"/>
+      <path d="M88.0001 28V16H96.0001V28H88.0001Z" fill="white"/>
+      <path d="M72 12V0H80V12H72Z" fill="white"/>
+      <path d="M96.0001 12V0H104V12H96.0001Z" fill="white"/>
+      <path d="M72 44V32H88V44H72Z" fill="white"/>
+      <path d="M72 60V48H88V60H72Z" fill="white"/>
+      <path d="M72 76V64H80V76H72Z" fill="white"/>
+      <path d="M88.0001 76V64H96.0001V76H88.0001Z" fill="white"/>
+      <path d="M72 92V80H80V92H72Z" fill="white"/>
+      <path d="M96.0001 92V80H104V92H96.0001Z" fill="white"/>
+      <path d="M464 12V0H496V12H464Z" fill="white"/>
+      <path d="M360 28V16H368V28H360Z" fill="white"/>
+      <path d="M360 44V32H368V44H360Z" fill="white"/>
+      <path d="M360 60V48H368V60H360Z" fill="white"/>
+      <path d="M360 76V64H368V76H360Z" fill="white"/>
+      <path d="M336 28V16H344V28H336Z" fill="white"/>
+      <path d="M336 44V32H344V44H336Z" fill="white"/>
+      <path d="M336 76V64H344V76H336Z" fill="white"/>
+      <path d="M344 92V80H360V92H344Z" fill="white"/>
+      <path d="M344 12V0H360V12H344Z" fill="white"/>
+      <path d="M256 28V16H264V28H256Z" fill="white"/>
+      <path d="M256 44V32H264V44H256Z" fill="white"/>
+      <path d="M256 60V48H264V60H256Z" fill="white"/>
+      <path d="M256 76V64H264V76H256Z" fill="white"/>
+      <path d="M224 28V16H232V28H224Z" fill="white"/>
+      <path d="M224 44V32H232V44H224Z" fill="white"/>
+      <path d="M224 60V48H232V60H224Z" fill="white"/>
+      <path d="M224 76V64H232V76H224Z" fill="white"/>
+      <path d="M256 92V80H264V92H256Z" fill="white"/>
+      <path d="M224 92V80H232V92H224Z" fill="white"/>
+      <path d="M224 12V0H264V12H224Z" fill="white"/>
+      <path d="M320 28V16H328V28H320Z" fill="white"/>
+      <path d="M320 44V32H328V44H320Z" fill="white"/>
+      <path d="M320 60V48H344V60H320Z" fill="white"/>
+      <path d="M320 76V64H328V76H320Z" fill="white"/>
+      <path d="M320 92V80H328V92H320Z" fill="white"/>
+      <path d="M320 12V0H328V12H320Z" fill="white"/>
+      <path d="M464 60V48H496V60H464Z" fill="white"/>
+      <path d="M496 28V16H504V28H496Z" fill="white"/>
+      <path d="M464 28V16H472V28H464Z" fill="white"/>
+      <path d="M464 44V32H472V44H464Z" fill="white"/>
+      <path d="M464 76V64H472V76H464Z" fill="white"/>
+      <path d="M464 92V80H472V92H464Z" fill="white"/>
+      <path d="M496 44V32H504V44H496Z" fill="white"/>
+      <path d="M272 80V92H304V80H272Z" fill="white"/>
+      <path d="M272 32V44H304V32H272Z" fill="white"/>
+      <path d="M304 64V76H312V64H304Z" fill="white"/>
+      <path d="M304 48V60H312V48H304Z" fill="white"/>
+      <path d="M272 64V76H280V64H272Z" fill="white"/>
+      <path d="M272 48V60H280V48H272Z" fill="white"/>
+      <path d="M272 16V28H280V16H272Z" fill="white"/>
+      <path d="M272 0V12H280V0H272Z" fill="white"/>
+      <path d="M512 28V16H520V28H512Z" fill="white"/>
+      <path d="M512 44V32H536V44H512Z" fill="white"/>
+      <path d="M512 60V48H520V60H512Z" fill="white"/>
+      <path d="M512 76V64H520V76H512Z" fill="white"/>
+      <path d="M512 92V80H544V92H512Z" fill="white"/>
+      <path d="M512 12V0H544V12H512Z" fill="white"/>
+      <path d="M424 28V16H432V28H424Z" fill="white"/>
+      <path d="M424 44V32H448V44H424Z" fill="white"/>
+      <path d="M424 60V48H432V60H424Z" fill="white"/>
+      <path d="M424 76V64H432V76H424Z" fill="white"/>
+      <path d="M424 92V80H456V92H424Z" fill="white"/>
+      <path d="M424 12V0H456V12H424Z" fill="white"/>
+      <path d="M392 28V16H400V28H392Z" fill="white"/>
+      <path d="M392 44V32H400V44H392Z" fill="white"/>
+      <path d="M392 60V48H400V60H392Z" fill="white"/>
+      <path d="M392 76V64H400V76H392Z" fill="white"/>
+      <path d="M392 92V80H400V92H392Z" fill="white"/>
+      <path d="M376 12V0H416V12H376Z" fill="white"/>
+    </svg>
+
+
+    <div class="row">
+      <div class="text" id="text">
+        <p>На этом автомате установлен эмулятор компьютера «Радио-86РК», разработанный еще в 1990-х программистом Александром Деминым. Первая версия была сделана для процессора Intel 486, позже он был переосмыслен и переписан на языке JavaScript. Автомат-эмулятор собран на базе одноплатного Raspberry Pi 3 B+, старого LCD-монитора и кастомной клавиатуры. Полную версию самого эмулятора можно изучить на сайте rk86.ru.</p>
+        <p>В 1980-х Александр Демин наблюдал за сборкой оригинального «Радио-86РК», но вспоминает, что выглядела та самая машина страшно. Никакого корпуса у нее не было, только некачественно пропечатанная плата из журнала «Радио», которую пропаивал, параллельно ища ошибки, страший брат Александра. Клавиатура была собрана из старой магазинной кассы с механическими кнопками с использованием железных реек и винтов от детского конструктора. Расположение клавиш получалось случайным и его приходилось выписывать  на бумажку. Причем провода периодически отваливались, а память горала. Монитором служил маленький черно-белый телевизору «Юность», а загрузка происходила с кассетного магнитофона.</p>
+      </div>
+      <div class="brackets" id="brackets">   
+      </div>
+    </div>
+    <svg class="logo_footer" width="240" height="98" viewBox="0 0 240 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 6V0H16V6H0Z" fill="white"/>
+      <path d="M0 14V8H4V14H0Z" fill="white"/>
+      <path d="M60 14V8H64V14H60Z" fill="white"/>
+      <path d="M60 22V16H64V22H60Z" fill="white"/>
+      <path d="M60 30V24H64V30H60Z" fill="white"/>
+      <path d="M60 38V32H64V38H60Z" fill="white"/>
+      <path d="M60 46V40H64V46H60Z" fill="white"/>
+      <path d="M0 22V16H4V22H0Z" fill="white"/>
+      <path d="M0 38V32H4V38H0Z" fill="white"/>
+      <path d="M28 38V32H32V38H28Z" fill="white"/>
+      <path d="M44 38V32H48V38H44Z" fill="white"/>
+      <path d="M44 46V40H48V46H44Z" fill="white"/>
+      <path d="M28 46V40H32V46H28Z" fill="white"/>
+      <path d="M32 6V0H44V6H32Z" fill="white"/>
+      <path d="M28 14V8H32V14H28Z" fill="white"/>
+      <path d="M28 22V16H32V22H28Z" fill="white"/>
+      <path d="M44 14V8H48V14H44Z" fill="white"/>
+      <path d="M44 22V16H48V22H44Z" fill="white"/>
+      <path d="M28 30V24H48V30H28Z" fill="white"/>
+      <path d="M76 38V32H80V38H76Z" fill="white"/>
+      <path d="M92 38V32H96V38H92Z" fill="white"/>
+      <path d="M92 46V40H96V46H92Z" fill="white"/>
+      <path d="M76 46V40H80V46H76Z" fill="white"/>
+      <path d="M80 6V0H92V6H80Z" fill="white"/>
+      <path d="M76 14V8H80V14H76Z" fill="white"/>
+      <path d="M76 22V16H80V22H76Z" fill="white"/>
+      <path d="M92 14V8H96V14H92Z" fill="white"/>
+      <path d="M92 22V16H96V22H92Z" fill="white"/>
+      <path d="M76 30V24H96V30H76Z" fill="white"/>
+      <path d="M100 38V32H104V38H100Z" fill="white"/>
+      <path d="M116 38V32H120V38H116Z" fill="white"/>
+      <path d="M116 46V40H120V46H116Z" fill="white"/>
+      <path d="M100 46V40H104V46H100Z" fill="white"/>
+      <path d="M104 6V0H116V6H104Z" fill="white"/>
+      <path d="M100 14V8H104V14H100Z" fill="white"/>
+      <path d="M100 22V16H104V22H100Z" fill="white"/>
+      <path d="M116 14V8H120V14H116Z" fill="white"/>
+      <path d="M116 22V16H120V22H116Z" fill="white"/>
+      <path d="M100 30V24H120V30H100Z" fill="white"/>
+      <path d="M144 14V8H148V14H144Z" fill="white"/>
+      <path d="M132 30V24H140V30H132Z" fill="white"/>
+      <path d="M140 38V32H144V38H140Z" fill="white"/>
+      <path d="M144 46V40H148V46H144Z" fill="white"/>
+      <path d="M124 14V8H128V14H124Z" fill="white"/>
+      <path d="M124 30V24H128V30H124Z" fill="white"/>
+      <path d="M124 38V32H128V38H124Z" fill="white"/>
+      <path d="M124 46V40H128V46H124Z" fill="white"/>
+      <path d="M124 22V16H144V22H124Z" fill="white"/>
+      <path d="M124 6V0H144V6H124Z" fill="white"/>
+      <path d="M52 6V0H72V6H52Z" fill="white"/>
+      <path d="M160 14V8H164V14H160Z" fill="white"/>
+      <path d="M160 22V16H164V22H160Z" fill="white"/>
+      <path d="M160 30V24H164V30H160Z" fill="white"/>
+      <path d="M160 38V32H164V38H160Z" fill="white"/>
+      <path d="M160 46V40H164V46H160Z" fill="white"/>
+      <path d="M152 6V0H172V6H152Z" fill="white"/>
+      <path d="M68 66V60H72V66H68Z" fill="white"/>
+      <path d="M72 66V60H76V66H72Z" fill="white"/>
+      <path d="M88 66V60H92V66H88Z" fill="white"/>
+      <path d="M68 74V68H72V74H68Z" fill="white"/>
+      <path d="M80 82V76H84V82H80Z" fill="white"/>
+      <path d="M76 74V68H80V74H76Z" fill="white"/>
+      <path d="M84 74V68H88V74H84Z" fill="white"/>
+      <path d="M68 82V76H72V82H68Z" fill="white"/>
+      <path d="M68 90V84H72V90H68Z" fill="white"/>
+      <path d="M68 98V92H72V98H68Z" fill="white"/>
+      <path d="M68 58V52H72V58H68Z" fill="white"/>
+      <path d="M92 66V60H96V66H92Z" fill="white"/>
+      <path d="M92 74V68H96V74H92Z" fill="white"/>
+      <path d="M92 82V76H96V82H92Z" fill="white"/>
+      <path d="M92 90V84H96V90H92Z" fill="white"/>
+      <path d="M92 98V92H96V98H92Z" fill="white"/>
+      <path d="M92 58V52H96V58H92Z" fill="white"/>
+      <path d="M212 66V60H216V66H212Z" fill="white"/>
+      <path d="M216 66V60H220V66H216Z" fill="white"/>
+      <path d="M232 66V60H236V66H232Z" fill="white"/>
+      <path d="M212 74V68H216V74H212Z" fill="white"/>
+      <path d="M224 82V76H228V82H224Z" fill="white"/>
+      <path d="M220 74V68H224V74H220Z" fill="white"/>
+      <path d="M228 74V68H232V74H228Z" fill="white"/>
+      <path d="M212 82V76H216V82H212Z" fill="white"/>
+      <path d="M212 90V84H216V90H212Z" fill="white"/>
+      <path d="M212 98V92H216V98H212Z" fill="white"/>
+      <path d="M212 58V52H216V58H212Z" fill="white"/>
+      <path d="M236 66V60H240V66H236Z" fill="white"/>
+      <path d="M236 74V68H240V74H236Z" fill="white"/>
+      <path d="M236 82V76H240V82H236Z" fill="white"/>
+      <path d="M236 90V84H240V90H236Z" fill="white"/>
+      <path d="M236 98V92H240V98H236Z" fill="white"/>
+      <path d="M236 58V52H240V58H236Z" fill="white"/>
+      <path d="M100 66V60H104V66H100Z" fill="white"/>
+      <path d="M100 74V68H104V74H100Z" fill="white"/>
+      <path d="M100 82V76H104V82H100Z" fill="white"/>
+      <path d="M100 90V84H104V90H100Z" fill="white"/>
+      <path d="M104 98V92H120V98H104Z" fill="white"/>
+      <path d="M100 58V52H104V58H100Z" fill="white"/>
+      <path d="M156 66V60H160V66H156Z" fill="white"/>
+      <path d="M156 74V68H176V74H156Z" fill="white"/>
+      <path d="M156 82V76H160V82H156Z" fill="white"/>
+      <path d="M156 90V84H160V90H156Z" fill="white"/>
+      <path d="M156 98V92H180V98H156Z" fill="white"/>
+      <path d="M156 58V52H180V58H156Z" fill="white"/>
+      <path d="M120 66V60H124V66H120Z" fill="white"/>
+      <path d="M148 66V60H152V66H148Z" fill="white"/>
+      <path d="M148 90V84H152V90H148Z" fill="white"/>
+      <path d="M128 66V60H132V66H128Z" fill="white"/>
+      <path d="M128 74V68H136V74H128Z" fill="white"/>
+      <path d="M120 74V68H124V74H120Z" fill="white"/>
+      <path d="M120 82V76H124V82H120Z" fill="white"/>
+      <path d="M120 90V84H124V90H120Z" fill="white"/>
+      <path d="M120 58V52H124V58H120Z" fill="white"/>
+      <path d="M184 66V60H188V66H184Z" fill="white"/>
+      <path d="M184 74V68H188V74H184Z" fill="white"/>
+      <path d="M184 82V76H188V82H184Z" fill="white"/>
+      <path d="M184 90V84H188V90H184Z" fill="white"/>
+      <path d="M188 98V92H204V98H188Z" fill="white"/>
+      <path d="M184 58V52H188V58H184Z" fill="white"/>
+      <path d="M204 66V60H208V66H204Z" fill="white"/>
+      <path d="M204 74V68H208V74H204Z" fill="white"/>
+      <path d="M204 82V76H208V82H204Z" fill="white"/>
+      <path d="M204 90V84H208V90H204Z" fill="white"/>
+      <path d="M204 58V52H208V58H204Z" fill="white"/>
+      <path d="M32 66V60H36V66H32Z" fill="white"/>
+      <path d="M32 74V68H36V74H32Z" fill="white"/>
+      <path d="M32 82V76H36V82H32Z" fill="white"/>
+      <path d="M32 90V84H36V90H32Z" fill="white"/>
+      <path d="M32 98V92H36V98H32Z" fill="white"/>
+      <path d="M24 58V52H44V58H24Z" fill="white"/>
+      <path d="M132 58V52H148V58H132Z" fill="white"/>
+      <path d="M136 82V76H148V82H136Z" fill="white"/>
+      <path d="M128 98V92H148V98H128Z" fill="white"/>
+      <path d="M8 66V60H12V66H8Z" fill="white"/>
+      <path d="M8 74V68H12V74H8Z" fill="white"/>
+      <path d="M8 82V76H12V82H8Z" fill="white"/>
+      <path d="M8 90V84H12V90H8Z" fill="white"/>
+      <path d="M0 58V52H20V58H0Z" fill="white"/>
+      <path d="M0 98V92H20V98H0Z" fill="white"/>
+      <path d="M20 22V16H24V22H20Z" fill="white"/>
+      <path d="M20 30V24H24V30H20Z" fill="white"/>
+      <path d="M12 38V32H20V38H12Z" fill="white"/>
+      <path d="M12 14V8H20V14H12Z" fill="white"/>
+      <path d="M0 30V24H4V30H0Z" fill="white"/>
+      <path d="M0 46V40H16V46H0Z" fill="white"/>
+      <path d="M52 82V76H60V82H52Z" fill="white"/>
+    </svg
   </div>
 </body>
-
 </html>
+
