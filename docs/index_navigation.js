@@ -1,38 +1,70 @@
-function list_keyboard_navigation() {
+function keyboard_navigation() {
   const buttons = document.getElementsByClassName("item");
+  const textBlock = document.getElementById("text");
   let active = 0;
 
-  buttons.item(active).focus();
+  if (buttons.length) buttons.item(active).focus();
 
-  document.onkeydown = event => {
+  document.onkeyup = event => {
     const keyCode = event.keyCode;
-    if (keyCode == 38 && active > 0) {      
-      active = active - 1;
+
+    if (keyCode == 38) {      
+      if (buttons.length && active > 0) {      
+        active = active - 1;
+      } else if (textBlock) {
+        textBlock.scrollBy({
+          top: -50,
+          behavior: 'smooth'
+        });
+      }
     }
-    if (keyCode == 40 && buttons.length > 1 && active < buttons.length) {      
-      active = active + 1;
+    if (keyCode == 40) {      
+      if (buttons.length && active < buttons.length) {      
+        active = active + 1;
+      } else if (textBlock) {
+        textBlock.scrollBy({
+          top: 50,
+          behavior: 'smooth'
+        });
+      }
     }
     if (keyCode == 27) {
-      console.log('esc', window.location);
-      window.location.assign('http://127.0.0.1:8000/');
+      window.location = '../index.html';
     }
 
-    buttons.item(active).focus();
+    if (buttons.length) buttons.item(active).focus();
   }
 }
 
 function fill_brackets() {
-  const bracketsBlock = document.getElementByClassName("brackets");
+  const bracketsNumber = 18;
+  const bracketsBlock = document.getElementById("brackets");
   
   let brackets = '';
-  for (let i = 0; i < 19; i++) {
-    brackets = `${brackets}()`;    
+  for (let i = 0; i < bracketsNumber; i++) {
+    brackets = `${brackets}<div class="bracket">()</div>`;    
   }
-  console.log('brackets', bracketsBlock, brackets);
+
   bracketsBlock.innerHTML = brackets;
+
+  const textBlock = document.getElementById("text");
+  const heightFraction = (textBlock.scrollHeight - textBlock.clientHeight) / (bracketsNumber + 1);
+  const bracketElems = document.getElementsByClassName("bracket");
+
+  bracketElems[0].style.setProperty('--opacity', 1);
+
+  textBlock.addEventListener('scroll', function () {    
+    const position = parseInt(textBlock.scrollTop / heightFraction, 10);
+
+    for (let i = 0; i < bracketsNumber; i++) {
+      if (position < bracketsNumber) bracketElems[i].style.setProperty('--opacity', i === position ? 1 : 0);      
+    }
+  });
 }
 
-function combine_navigation() {
-  list_keyboard_navigation();
+
+
+function about_project() {
+  keyboard_navigation();
   fill_brackets();
 }
