@@ -259,9 +259,6 @@ function UI(tape_catalog, runner, memory, autoexec) {
       screen.init_cache();
       this.runner.cpu.jump(file.entry);     
 
-      // if (file.name == 'FORMULA.RK') {
-      //   this.memory.keyboard.key_table = key_tables['FORMULA.RK'];
-      // }    
       this.memory.keyboard.key_table = key_tables[file.name];
       
       this.sound_toggle({checked: true}); // Set sound on  
