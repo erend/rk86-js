@@ -2,7 +2,7 @@ function keyboard_navigation() {
   const buttons = document.getElementsByClassName("item");
   const textBlock = document.getElementById("text");
   let active = 0;
-console.log('query', window.location);
+
   if (buttons.length) buttons.item(active).focus();
 
   document.onkeyup = event => {
