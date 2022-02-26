@@ -359,7 +359,7 @@ const key_tables = {
     192: [7, 0x40], //  ^ -> `
     32: [7, 0x80], //   SPC
   },
-  'XONIX1.GAM': {
+  'XONIX.GAM': {
     36: [0, 0x01], //   \\  -> HOME
     35: [0, 0x02], //   CTP -> END
     116: [0, 0x04], //  AP2 -> F5   Red Top
