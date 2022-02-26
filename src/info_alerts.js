@@ -4,6 +4,6 @@ const info_alerts = {
   'LABYRINT.GAM': '<span>Запуск игры - Ф1</span><br /><span>Читать правила - Ф2</span><br /><span>Изменить лабиринт - «,»</span>',
   'STOPKR.RK': '<span>Играть - Ф1</span><br /><span class="alert">Скорость - Ф2 4</span>',
   'TETRIS2.RK': '',
-  'XONIX1.GAM': '<span>Начало игры - Enter</span>',
+  'XONIX.GAM': '<span>Начало игры - Enter</span>',
   'DESCENT.RK': '',
 };
